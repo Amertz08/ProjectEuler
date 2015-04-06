@@ -42,15 +42,16 @@ value = int(input('Enter a value: '))
 
 #   Get all factors for value
 factors = findFactors(value)
-print(factors)
+print('factors: %s' % factors)
+
 #   Iterate over factors highest to lowest
 #   Exit if prime
 n = len(factors) - 1
-while(not isPrime(factors[n]) and n != 0):
+while(not n < 0 and not isPrime(factors[n])):
     n -= 1
 
 #   Output results
-if(n != 0):  #   n will be 0 if no prime factors
+if(not n < 0):  #   n < 0 if no prime factors
     print('Highest prime: %d' % factors[n])
 else:
     print('There is no prime factor')
