@@ -1,6 +1,6 @@
 '''
 Takes in a value
-starts at top
+high to low
 returns True if prime
 '''
 def isPrime(n):
@@ -20,17 +20,18 @@ def isPrime(n):
 Takes in a value
 returns list of all the factors
 excluding 1, n, and perfect squares
+from highest to lowest
 '''
 def findFactors(n):
     #   Create an empty list
     f = []
     #   Exclude 1 and n
-    a = 2
-    while(a < n):
+    a = n - 1
+    while(a > 1):
         #   Add to list if factor
         if n % a == 0:
             f.append(a)
-        a += 1
+        a -= 1
     #   Return factors
     return f
 
@@ -46,12 +47,12 @@ print('factors: %s' % factors)
 
 #   Iterate over factors highest to lowest
 #   Exit if prime
-n = len(factors) - 1
-while(not n < 0 and not isPrime(factors[n])):
-    n -= 1
+n = 0
+while(n < len(factors) and not isPrime(factors[n])):
+    n += 1
 
 #   Output results
-if(not n < 0):  #   n < 0 if no prime factors
+if(n < len(factors)):  #   n < 0 if no prime factors
     print('Highest prime: %d' % factors[n])
 else:
     print('There is no prime factor')
