@@ -1,3 +1,5 @@
+import multiprocessing as mp
+
 '''
 Takes in a value
 high to low
@@ -45,6 +47,13 @@ value = int(input('Enter a value: '))
 factors = findFactors(value)
 print('factors: %s' % factors)
 
+'''
+if __name__ == '__main__':
+    print('e')
+    pool = mp.Pool(processes=4)
+    results = pool.map(isPrime, factors)
+    print(results)
+'''
 #   Iterate over factors highest to lowest
 #   Exit if prime
 n = 0
