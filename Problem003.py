@@ -1,38 +1,37 @@
 '''
 Takes in a value
-returns true if prime
+starts at top
+returns True if prime
 '''
 def isPrime(n):
-    #Assume that it is prime
-    answer = True
-    #Get next factor
+    #   Start at top
     a = n - 1
-    #Iterate over all possible factors
+    #   Iterate till 1
     while(a > 1):
-        #See if value is a factor
-        if(n%a == 0):
-            answer = False
-            #Exit if true
-            break
+        #   if a is factor
+        if n % a == 0:
+            #   Not prime
+            return False
         a -= 1
-    return answer
+    #   Is prime
+    return True
 
 '''
 Takes in a value
 returns list of all the factors
+excluding 1, n, and perfect squares
 '''
 def findFactors(n):
-    #Create an empty list
+    #   Create an empty list
     f = []
-    #Look at the next lower value
-    a = n - 1
-    #Iterate through all values
-    while(a > 1):
-        #Determine if it is a factor
-        if(n%a == 0):
-            #Add factor to list
+    #   Exclude 1 and n
+    a = 2
+    while(a < n):
+        #   Add to list if factor
+        if n % a == 0:
             f.append(a)
-        a -= 1
+        a += 1
+    #   Return factors
     return f
 
 '''
@@ -41,17 +40,17 @@ Program
 print('This program will find the highest prime factor of a number')
 value = int(input('Enter a value: '))
 
-#Get all factors for value
+#   Get all factors for value
 factors = findFactors(value)
+print(factors)
+#   Iterate over factors highest to lowest
+#   Exit if prime
+n = len(factors) - 1
+while(not isPrime(factors[n]) and n != 0):
+    n -= 1
 
-#Iterate over factors highest to lowest
-#Exit if prime
-n = 0
-while(not isPrime(factors[n])):
-    if(isPrime(factors[n])):
-        break
-    n += 1
-
-#Output results
-print('Highest prime: %s' % factors[n])
-    
+#   Output results
+if(n != 0):  #   n will be 0 if no prime factors
+    print('Highest prime: %d' % factors[n])
+else:
+    print('There is no prime factor')
