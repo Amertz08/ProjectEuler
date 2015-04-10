@@ -48,3 +48,23 @@ def find_factors(n):
             f.append(a)
         a -= 1
     return f
+
+'''
+x       :   int
+return  :   boolean
+takes in an int x
+returns True if value is a boolean
+'''
+def is_palindrome(x):
+    value = str(x)
+    #Assume they are palindromes
+    answer = True
+    a = 0
+    b = len(value) - 1
+    while(a != b and (b >= 0 or a < len(value))):
+        if(value[a] != value[b]):
+            answer = False
+            break
+        a += 1
+        b -= 1
+    return answer
