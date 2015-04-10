@@ -4,6 +4,7 @@ print('This program will find the highest prime factor of a number')
 value = int(input('Enter a value: '))
 
 #   Get all factors for value
+<<<<<<< HEAD
 factors = find_factors(value)
 
 #   Iterate over factors highest to lowest
