@@ -1,6 +1,4 @@
-#   This is not done.
-
-#Take in Names
+#   Take in Names
 with open('p022_names.txt') as f:
     for a in f:
         names = a
@@ -44,9 +42,13 @@ alpha_points = {
 'Z' :   26
 }
 
+#   Go through each name
 for a in range(len(clean_names)):
+    #   Go through each character
     for b in range(len(clean_names[a])):
+        #   Calculate score
         scores[a] += alpha_points[clean_names[a][b]] * (a + 1)
 
+#   Output values
 print 'name: %s score: %d' % (clean_names[937], scores[937])
 print 'Total sum: %d' % sum(scores)
