@@ -3,13 +3,9 @@ Takes in a value, start point, and end point
 returns true if  value is evenly divisible from start to end
 '''
 def eDiv(value, start, end):
-    #Assume it is evenly div through range
-    answer = True
     for a in range(start, end + 1):
-        if (value % a != 0):
-            answer = False
-            break
-    return answer
+        if (value % a != 0): return False
+    return True
 
 #Prompt input
 print('''
