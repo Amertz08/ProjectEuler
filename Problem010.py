@@ -1,23 +1,6 @@
-'''
-Takes in a value
-returns true if prime
-'''
-def isPrime(n):
-    #Assume that it is prime
-    answer = True
-    #Get next factor
-    a = n - 1
-    #Iterate over all possible factors
-    while(a > 1):
-        #See if value is a factor
-        if(n%a == 0):
-            answer = False
-            #Exit if true
-            break
-        a -= 1
-    return answer
+from ProjectEuler import is_prime
 
-#Start Program
+#   Start Program
 print('''
 This program takes in a value and sums all the prime numbers below it
 ''')
@@ -34,7 +17,7 @@ start = time.time()
 primes = []
 while(n > 1):
     #See if prime
-    if(isPrime(n)):
+    if(is_prime(n)):
         #Add to list
         primes.append(n)
     #Decrement
