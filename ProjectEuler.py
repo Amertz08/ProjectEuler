@@ -17,9 +17,9 @@ returns True if prime
 def is_prime(n):
     #   Get next factor
     a = n - 1
-    #Iterate over all possible factors
+    #   Iterate over all possible factors
     while(a > 1):
-        #See if value is a factor
+        #   See if value is a factor
         if(n%a == 0): return False
         a -= 1
     return True
@@ -28,7 +28,7 @@ def is_prime(n):
 n       :   int
 return  :   list
 Takes in a value n
-returns list of all the factors
+returns list of all the factors from high to low
 '''
 def find_factors(n):
     #Create an empty list
