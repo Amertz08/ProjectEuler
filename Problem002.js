@@ -10,12 +10,26 @@ function Fibonacci(n) {
   }
 }
 
-var a = 1;
-var max_value = 1000;
+
+var max_value = 4000000;
+//  Get first value
+var a = 2;
+var val = Fibonacci(a);
 var values = [];
-while(Fibonnaci(a) < max_value) {
-  if(Fibonnaci(a) % 2 == 0) {
-    
+
+while(val < max_value) {
+  //  If even valued add to list
+  if(val % 2 == 0) {
+    values.push(val);
   }
+  //  Get new value
+  a++;
+  val = Fibonacci(a);
 }
+//  Find sum
+var sum = 0;
+for(i = 0; i < values.length; i++) {
+  sum += values[i];
+}
+console.log(sum);
 phantom.exit();
