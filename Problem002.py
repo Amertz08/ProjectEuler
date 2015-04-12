@@ -1,11 +1,14 @@
 from ProjectEuler import Fibonacci as F
-
-a = 1
-max_value = 1000
-values = []
-while(F(a) < max_value):
-    if(F(a)% 2 == 0):
-        values.append(F(a))
+#   This doesn't work
+a = 2
+max_value = 10
+val = F(a)
+values = [val]
+while(a < max_value):
     a += 1
+    val = F(a)
+    values.append(val)
 
-print(sum(values))
+
+
+print(values)
