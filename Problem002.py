@@ -1,14 +1,13 @@
 from ProjectEuler import Fibonacci as F
 #   This doesn't work
-a = 2
-max_value = 10
+a = 1
 val = F(a)
-values = [val]
-while(a < max_value):
+values = []
+while(val <= 4000000):
+    if val % 2 == 0:
+        values.append(val)
     a += 1
     val = F(a)
-    values.append(val)
 
-
-
-print(values)
+assert sum(values) == 4613732, "fail"
+print "Pass"
