@@ -3,7 +3,7 @@ Solution: problem241.o
 
 problem241.o: problem241.cpp
 		g++ -std=c++11 -g -c problem241.cpp
-		
+
 clean:
 			rm *.o Solution
 			clean done
