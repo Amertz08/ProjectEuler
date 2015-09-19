@@ -1,11 +1,11 @@
 '''
-n       :   int
-finds the n-th term fibonacci number
+fibonacci generator
 '''
-def Fibonacci(n):
-    if n == 0: return 0
-    elif n == 1: return 1
-    else: return Fibonacci(n-1)+Fibonacci(n-2)
+def fib():
+    a, b = 0, 1
+    while 1:
+        yield a
+        a, b = b, a + b
 
 
 '''

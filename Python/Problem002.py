@@ -1,13 +1,12 @@
-from ProjectEuler import Fibonacci as F
+from ProjectEuler import fib
 #   This doesn't work
-a = 1
-val = F(a)
 values = []
-while(val <= 4000000):
-    if val % 2 == 0:
-        values.append(val)
-    a += 1
-    val = F(a)
+for x in fib():
+    if x > 4000000:
+        break
+    else:
+        if x % 2:
+            values.append(x)
 
 assert sum(values) == 4613732, "fail"
 print "Pass"
